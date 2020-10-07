@@ -1,11 +1,16 @@
 img-css:
 imgs:
-    - alt-text: "FaceGAN app"
+    - name: "FaceGAN app"
       filename: screenshot-1-face-gan.png
       live-url: https://s4a.streamlit.io/treuille/demo-face-gan/master/app.py/+/
       git-url: https://github.com/treuille/demo-face-gan/blob/master/app.py
 
-      # screenshot-2-goodreads.png
+    - name: "Goodreads app"
+      filename: screenshot-2-goodreads.png
+      live-url: https://s4a.streamlit.io/tylerjrichards/book_reco/master/books.py
+      git-url: https://github.com/tylerjrichards/book_reco/blob/master/books.py 
+
+      # 
       # screenshot-3-ligo.png
       # screenshot-4-covid.png
       # screenshot-5-ronaldo.png
