@@ -1,4 +1,4 @@
-img-css:
+img-width: 300
 imgs:
     - name: "FaceGAN app"
       filename: screenshot-1-face-gan.png
