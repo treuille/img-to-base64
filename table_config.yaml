@@ -1,0 +1,12 @@
+img-css:
+imgs:
+    - alt-text: "FaceGAN app"
+      filename: screenshot-1-face-gan.png
+      live-url: https://s4a.streamlit.io/treuille/demo-face-gan/master/app.py/+/
+      git-url: https://github.com/treuille/demo-face-gan/blob/master/app.py
+
+      # screenshot-2-goodreads.png
+      # screenshot-3-ligo.png
+      # screenshot-4-covid.png
+      # screenshot-5-ronaldo.png
+      # screenshot-6-observable.png
