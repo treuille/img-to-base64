@@ -22,10 +22,10 @@ imgs:
       live-url: https://s4a.streamlit.io/panditpranav/svm_covid_tracking/master/COVID_app.py/+/
       git-url: https://github.com/PanditPranav/SVM_COVID_tracking/blob/master/COVID_app.py
 
-    - name: "Ronaldo app"
+    - name: "Messi vs Ronaldo app"
       filename: screenshot-5-ronaldo.png
-      live-url: https://s4a.streamlit.io/adilmoujahid/streamlit-messi-ronaldo/master/app.py/+/
-      git-url: https://github.com/adilmoujahid/streamlit-messi-ronaldo/blob/master/app.py
+      live-url: https://s4a.streamlit.io/asaini/streamlit-messi-ronaldo/master/app.py
+      git-url: https://github.com/asaini/streamlit-messi-ronaldo/blob/master/app.py 
 
     - name: "Observable app"
       filename: screenshot-6-observable.png
