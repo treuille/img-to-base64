@@ -28,20 +28,19 @@ def base64_img_html(im, width):
     im.save(io_buffer, format="JPEG")
     img_str = base64.b64encode(io_buffer.getvalue()).decode("utf-8")
     st.experimental_show(type(img_str))
-    img_tag = f'<img style="clear:right" src="data:image/jpeg;base64,{img_str}" />'
-    img_tag = f'<img style="width:{width}px" src="https://raw.githubusercontent.com/treuille/img-to-base64/main/screenshot-1-face-gan.png"/>' 
+    img_tag = f'<img style="border: 1px solid #ddd" src="data:image/jpeg;base64,{img_str}" />'
+    # img_tag = f'<img style="width:{width}px" src="https://raw.githubusercontent.com/treuille/img-to-base64/main/screenshot-1-face-gan.png"/>' 
     return img_tag
 
 def captioned_img_html(app_num, base64_img, name, live_url, git_url, width):
     return textwrap.dedent(f'''
-        <div style="width:{width}px; background-color:green">
+        <div style="width:{width}px; margin-right:20px; margin-bottom:20px">
            {base64_img}
-           <div width="{width}px" style="margin:auto; max-width:{width}px; text-align:center; background-color:red">
+           <div style="width:{width}px; text-align:center; margin-top:3px; font-family: Sans-Serif; font-size: 10px">
               ({app_num})
-              <a href="{live_url}">Streamlit App</a> |
+              <a href="{live_url}">Live App</a> |
               <a href="{git_url}">Github Source</a>
            </div>
-           <div>width: {width}</div>
         </div>
     ''')
 # st.code(img_tag, language='html')
@@ -54,15 +53,17 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 # Sidebar configuration
 show_config = st.sidebar.checkbox('Show raw config', True)
-remove_top_pixels = st.sidebar.slider('Remove pixels from top.', 0, 100, 10)
-new_img_width = st.sidebar.slider('Image width', 1, 1000, 100)
 
 # Load the config information from the user.
 config = yaml.load(open('table_config.yaml'))
 new_img_width = config['img-width']
+remove_top_pixels = config['remove-top-pixels']
+
 st.experimental_show(new_img_width)
+st.experimental_show(remove_top_pixels)
 
 # Create the images
+figure_html = ""
 for img_num, img_info in enumerate(config['imgs']):
     image = load_image(img_info['filename'], new_img_width, remove_top_pixels)
     st.image(image)
@@ -72,9 +73,17 @@ for img_num, img_info in enumerate(config['imgs']):
             base64_img, img_info['name'],
             img_info['live-url'], img_info['git-url'],
             new_img_width)
-    components.html(captioned_img, height=600)
-    st.code(captioned_img, language='html')
+    figure_html += captioned_img + '\n'
 
+# Wrap everything in a giant div
+figure_html = textwrap.dedent(f'''
+<div style="display: flex; flex-wrap: wrap; justify-content: center">
+{textwrap.indent(figure_html, prefix="  ")}
+</div>
+''')
+
+components.html(figure_html, height=400)
+st.code(figure_html, language='html')
 
 
 # Show the raw configuration data at the bottom.

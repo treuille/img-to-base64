@@ -1,4 +1,6 @@
-img-width: 300
+img-width: 265
+remove-top-pixels: 266
+
 imgs:
     - name: "FaceGAN app"
       filename: screenshot-1-face-gan.png
@@ -10,8 +12,27 @@ imgs:
       live-url: https://s4a.streamlit.io/tylerjrichards/book_reco/master/books.py
       git-url: https://github.com/tylerjrichards/book_reco/blob/master/books.py 
 
+    - name: "LIGO app"
+      filename: screenshot-3-ligo.png
+      live-url: https://s4a.streamlit.io/jkanner/streamlit-dataview/master/app.py/+/ 
+      git-url: https://github.com/jkanner/streamlit-dataview/blob/master/app.py
+
+    - name: "Covid app"
+      filename: screenshot-4-covid.png
+      live-url: https://s4a.streamlit.io/panditpranav/svm_covid_tracking/master/COVID_app.py/+/
+      git-url: https://github.com/PanditPranav/SVM_COVID_tracking/blob/master/COVID_app.py
+
+    - name: "Ronaldo app"
+      filename: screenshot-5-ronaldo.png
+      live-url: https://s4a.streamlit.io/adilmoujahid/streamlit-messi-ronaldo/master/app.py/+/
+      git-url: https://github.com/adilmoujahid/streamlit-messi-ronaldo/blob/master/app.py
+
+    - name: "Observable app"
+      filename: screenshot-6-observable.png
+      live-url: https://s4a.streamlit.io/asg017/streamlit-observable-showcase/master/app.py/+/
+      git-url: https://github.com/asg017/streamlit-observable-showcase/blob/master/app.py
+
       # 
-      # screenshot-3-ligo.png
-      # screenshot-4-covid.png
-      # screenshot-5-ronaldo.png
-      # screenshot-6-observable.png
+      # 
+      # 
+      # 
